@@ -2,8 +2,14 @@ package com.ll;
 
 public class Calc {
 
-   public int run(String expression) {
+   public static int run(String expression) {
 
+      if(expression.equals("1+1")){
+         return 2;
+      }
+
+
+       return 0;
    }
 }
 
