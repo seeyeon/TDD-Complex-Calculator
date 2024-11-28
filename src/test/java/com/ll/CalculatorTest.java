@@ -9,10 +9,8 @@ public class CalculatorTest {
     @Test
     @DisplayName("1 + 1 == 2")
     void t1() {
-        Calc calc = new Calc();
-        int rs = calc.run("1+1");
 
-        assertThat(rs).isEqualTo(2);
+        assertThat(Calc.run("1 + 1")).isEqualTo(2);
     }
 
     @Test
@@ -20,5 +18,6 @@ public class CalculatorTest {
     void t2() {
         assertThat(Calc.run("2 + 1")).isEqualTo(3);
     }
+
 
 }
