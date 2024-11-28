@@ -4,23 +4,12 @@ public class Calc {
 
    public static int run(String expression) {
 
-      if(expression.equals("1 + 1")){
-         return 2;
-      }
+      String[] expre = expression.split("\\+");
+      int num1 = Integer.parseInt(expre[0].trim());
+      int num2 = Integer.parseInt(expre[1].trim());
 
-      if(expression.equals("2 + 1")){
-         return 3;
-      }
+      return num1 + num2;
 
-      if(expression.equals("2 + 2")){
-         return 4;
-      }
-
-      if(expression.equals("1000 + 280")){
-         return 1280;
-      }
-
-      return 0;
    }
 }
 
