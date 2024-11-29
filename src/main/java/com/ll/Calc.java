@@ -1,39 +1,31 @@
 package com.ll;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Calc {
 
    public static int run(String expression) {
 
-      List<Integer> params = new ArrayList<>();
-      int sum =0;
+      List<String> params = Arrays.asList(expression.split(" "));
+      int result = Integer.parseInt(params.get(0));
 
-      if(expression.contains("+")){
+     for(int i=1; i< params.size(); i +=2){
+        int number = Integer.parseInt(params.get(i+1));
+        String operator = params.get(i);
 
-         String[] numbers = expression.split(" \\+ ");
-         for(int i=0; i<numbers.length; i++){
-           params.add(Integer.parseInt(numbers[i].trim()));
-         }
+        if(operator.equals("+")){
+           result +=number;
+        } else if(operator.equals("-")){
+           result -=number;
+        }
+     }
 
-         for(int i : params){
-            sum += i;
-         }
-         return sum;
-      }
-
-      if(expression.contains("-")){
-         String[] expre = expression.split("\\-");
-         int num1 = Integer.parseInt(expre[0].trim());
-         int num2 = Integer.parseInt(expre[1].trim());
-
-         return num1 - num2;
-      }
-
-      return 0;
+     return result;
    }
 }
+
 
 
 
